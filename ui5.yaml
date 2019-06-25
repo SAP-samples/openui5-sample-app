@@ -2,3 +2,18 @@ specVersion: '1.0'
 metadata:
   name: openui5-sample-app
 type: application
+server:
+  customMiddleware:
+    - name: ponyTranslator
+      beforeMiddleware: serveResources
+      mountPath: /
+      configuration:
+        mood: "🐤 happy"
+---
+specVersion: '1.0'
+kind: extension
+type: server-middleware
+metadata:
+  name: ponyTranslator
+middleware:
+  path: middleware/ponyTranslator.js
