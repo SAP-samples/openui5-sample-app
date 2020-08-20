@@ -8,6 +8,7 @@
 		"lint": "eslint webapp",
 		"karma": "karma start",
 		"karma-ci": "rimraf coverage && karma start karma-ci.conf.js",
+		"karma-gherkin": "rimraf report && karma start karma-gherkin.conf.js && node html-report.js",
 		"watch": "npm run karma",
 		"test": "npm run lint && npm run karma-ci",
 		"build": "ui5 build -a --clean-dest",
@@ -17,10 +18,12 @@
 	"dependencies": {},
 	"devDependencies": {
 		"@ui5/cli": "^2.4.1",
+		"cucumber-html-reporter": "^5.2.0",
 		"eslint": "^7.7.0",
 		"karma": "^4.4.1",
 		"karma-chrome-launcher": "^3.1.0",
 		"karma-coverage": "^2.0.3",
+		"karma-cucumber-reporter": "^1.0.4",
 		"karma-ui5": "^2.2.0",
 		"local-web-server": "^4.2.1",
 		"rimraf": "^3.0.2"
