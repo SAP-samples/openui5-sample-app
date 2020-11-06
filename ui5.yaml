@@ -11,3 +11,21 @@ framework:
     - name: sap.ui.core
     - name: sap.ui.unified
     - name: themelib_sap_fiori_3
+
+---
+specVersion: '2.0'
+metadata:
+  name: sinon-shim
+kind: extension
+type: project-shim
+shims:
+  configurations:
+    sinon:
+      specVersion: '2.0'
+      metadata:
+        name: sinon
+      type: module
+      resources:
+        configuration:
+          paths:
+            "/resources/node_modules/sinon/": "."
