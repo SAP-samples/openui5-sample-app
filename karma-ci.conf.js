@@ -1,11 +1,13 @@
+// @ts-nocheck - Ignore Karma config, see https://github.com/karma-runner/karma/issues/3329
 module.exports = function(config) {
 	"use strict";
 
 	require("./karma.conf")(config);
+
 	config.set({
 
 		preprocessors: {
-			"{webapp,webapp/!(test)}/*.js": ["coverage"]
+			"{webapp,webapp/!(test)}/!(mock*).js": ["coverage"]
 		},
 
 		coverageReporter: {
@@ -31,7 +33,7 @@ module.exports = function(config) {
 
 		reporters: ["progress", "coverage"],
 
-		browsers: ["CustomChromeHeadless"],
+		browsers: ["CustomChromiumHeadlesssNoSandbox"],
 
 		singleRun: true
 
